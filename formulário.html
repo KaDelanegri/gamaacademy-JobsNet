@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styleform.css">
+    <title>JobsNET Cadastro</title>
+</head>
+
+<header>
+    <div id="logojobsnet">
+        <img src="./logo jobsnet 2.jpg" alt="logojobsnet" width="250px">
+    </div>
+
+    <div>
+        <h1 id="tittle">Banco de Talentos</h1>
+        <p id="subtittle">Complete suas informações para receber oportunidades!</p>
+        <br>
+        <br>
+    </div>
+</header>
+
+<body>
+    <div>
+        <h2 id="secaopreenc">DADOS PESSOAIS</h2>
+    </div>
+    
+    <form action="/add" id="form contato">
+            <div>
+                <label for ="name">Nome <span>*</span></label>
+                <br>
+                <input type="text" name="nome" id="nome" required>
+                <br>
+                <br>
+            </div>
+            <div>
+                <label for="sobrenome">Sobrenome<span>*</span></label>
+                <br>
+                <input tyoe="text" name="sobrenome" id="sobrenomme" required>
+                <br>
+                <br>
+            </div>
+
+        <div>
+            <label for="email">E-mail<span>*</span></label>
+            <br>
+            <input type="email" name="email" id="email" required placeholder="ex.: email@email.com"> 
+            <br>
+            <br>        
+        </div>
+        
+        <div>
+            <label for="cargopret">Cargo Pretendido<span>*</span></label>
+            <br>
+            <input type="text" name="cargopret" id="cargopret">
+            <br>
+            <br>
+        </div>
+
+        <div>
+            <label for="genero">Gênero</label>
+            <br>
+            <select id="genero">
+                <option selected disabled value="">Selecione</option>
+                <option for="genFem">Feminino</option>
+                <option for="genMasc">Masculino</option>
+                <option for="genNaoDecl">Prefiro Não Dizer</option>
+                <!-- <option type="text" name="outrogen">Outro</option> -->
+            </select>
+            <br>        
+            <br>
+        </div>
+        
+        <div>
+            <label for="dtnasc">Data de Nascimento<span>*</span></label>
+            <br>
+            <input id="dtnasc" type="date" required>
+            <br>
+            <br>
+        </div>
+
+        <div>
+            <label for="estadocivil">Estado Civil</label>
+            <br>
+            <select id="estadocivil">
+                <option selected disable value="">Selecione</option>
+                <option for="casado">Casado (a)</option>
+                <option for="solt">Solteiro (a)</option>
+                <option for="divorc">Divorciado (a)</option>
+                <option for="viuvo">Viúvo (a)</option>
+                <option for="outro">Outro</option>
+            </select>
+            <br>
+            <br>
+        </div>
+
+            <div class="cep">
+                <label for="cep"> CEP:<span>*</span>
+                </label>
+                <input name="cep" type="text" id="cep" value="" size="10" maxlength="10" placeholder="Ex: 00000-000"
+                onkeydown="javascript: fMasc(this, mCEP)"    
+                onblur="pesquisacep(this.value);">
+                <br>
+                <br>
+            </div>
+
+            <div class="rua">
+                <label for="rua"> Endereço:<span>*</span>
+                </label>
+                <input type="address" for="rua" id="rua" name="rua" required>
+                <br>
+                <br>
+            </div>
+
+            <div class="numero">
+                <label for="numero">Número<span>*</span>
+                </label>
+                <input type="number" for="numero" id="numero" name="numero" required>
+                <br>
+                <br>
+            </div>
+
+        <div class="form-row">
+                <label for="bairro"> Bairro:<span>*</span>
+                </label>
+                <input type="address" for="bairro" id="bairro" name="bairro" required>
+                <br>
+                <br>
+
+                <label for="cidade"> Cidade:<span>*</span>
+                </label>
+                <input type="address" for="cidade" id="cidade" name="cidade" required>
+                <br>
+                <br>
+                 
+                <label for="uf" >Estado:<span>*</span>
+                </label>
+                <input type="address" for="uf" id="uf" name="estado" required>
+                <br>
+                <br>
+
+        </div>
+        <div>
+            <label>Telefone Fixo</label>
+            <br>
+            <input type="tel" id="telfixo" placeholder="Ex.: (XX) XXXX-XXXX">
+            <br>
+            <br>
+        </div>
+
+        <div>
+            <label>Celular <span>*</span></label>
+            <br>
+            <input type="tel" placeholder="Ex.: (XX) 9XXXX-XXXX">
+            <br>
+            <br>
+        </div>
+
+        <div>
+            <label>Telefone de Contato<span>*</span></label>
+            <br>
+            <input type="tel" id="telcontato" placeholder="Ex.: (XX) XXXX-XXXX">
+            <br>
+            <br>
+        </div>
+
+        <div>
+            <label>Nome de Contato<span>*</span></label>
+            <br>
+            <input type="text" id="nomecontato">
+            <br>
+            <br>
+        </div>
+
+        <div>
+            <h2 id="secaopreenc">DOCUMENTOS PESSOAIS</h2>
+        </div>
+
+        <div>
+            <label>Identidade</label>
+            <br>
+            <input type="text" id="ident">
+        <br>
+        <br>
+        </div>
+
+        <div>
+            <label for="cpf"> CPF:<span>*</span>
+            </label>
+            <input type="text" for="cpf" id="cpf" name="cpf" maxlength="14" placeholder="Ex: 000.000.000-00" required onkeydown="javascript: fMasc(this, mCPF)" oninput="ValidaCPF()";>
+            <span id="erro-cpf"></span>
+            <br>
+            <br>
+        </div>
+
+        <div>
+            <label>Categoria Habilitação</label>        
+            <br>
+            <select>
+                <option selected disabled value="">Selecione</option>
+                <option>Não Possuo</option>
+                <option>ACC</option>
+                <option>AB</option>
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+                <option>D</option>
+                <option>E</option>
+            </select>
+            <br>
+            <br>
+        </div>
+
+        <div>
+            <label>Possui Veículo?</label>
+            <br>
+            <select>
+                <option selected disabled value="">Selecione</option>
+                <option>Sim</option>
+                <option>Não</option>
+            </select>
+            <br>
+            <br>
+        </div>
+
+        <button class="button" type="submit">Enviar</button>
+
+    </form>
+    <script src="./form adcionais em javascript.js"></script> 
+</body>
+</html>
